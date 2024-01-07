@@ -17,16 +17,16 @@ public class Solution implements Comparable<Solution>{
 
     }
     
+    public int compareTo(Solution compareTo){
 
-    public int compareTo(Solution s2) {
+        Solution compareToEmp = (Solution)compareTo;
 
-        int result; 
-        if (this.FitnessValue > s2.FitnessValue){
-            result = 1;
-        }else{
-            result = -1;
-        }
-        return result; 
+        if (FitnessValue >= compareToEmp.FitnessValue) return 1;
+
+        return -1;        
+
+    }
+
 
     }
 
@@ -37,4 +37,4 @@ public class Solution implements Comparable<Solution>{
 
  
     
-}
+

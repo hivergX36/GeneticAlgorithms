@@ -37,7 +37,7 @@ public class Genetic {
         this.Nbind = nbind;
         this.NbPop = nbpop;  
         Population = new Solution[this.NbPop];
-        Echantillon = new Solution[this.NbVariable];
+        Echantillon = new Solution[this.Nbind];
         
 
         File input = new File(name);
@@ -316,22 +316,24 @@ public class Genetic {
             while(compteur < this.Nbind){
                 for(int i = 0; i < Nbind; i++){
                 randomIndividual = random.nextInt(this.Nbind);
-                MyList[compteur] = Population[randomIndividual];
-    
-                }
-             Arrays.sort(MyList, Collections.reverseOrder());
-             this.Echantillon[compteur] = MyList[0];
-             compteur++; 
-    
-    
-    
-    
+                MyList[i] = Population[randomIndividual];
             }
-    
-    
-    
-    
+           System.out.println("La valeur de fitness 0 est: " + MyList[0].FitnessValue);
+           System.out.println("La valeur de fitness 1 est: " + MyList[1].FitnessValue);
+           System.out.println("La valeur de fitness 2 est: " + MyList[2].FitnessValue);
+           System.out.println("La valeur de fitness 3 est: " + MyList[3].FitnessValue);
+           Arrays.sort(MyList, Collections.reverseOrder());
+           System.out.println("La valeur de fitness 0 est: " + MyList[0].FitnessValue);
+           System.out.println("La valeur de fitness 1 est: " + MyList[1].FitnessValue);
+           System.out.println("La valeur de fitness 2 est: " + MyList[2].FitnessValue);
+           System.out.println("La valeur de fitness 3 est: " + MyList[3].FitnessValue);
+
+
+           this.Echantillon[compteur] = MyList[0];
+           compteur++; 
         }
+
+    }
     
         void CrossoverMutation(){
             Random random = new Random();
@@ -509,6 +511,7 @@ public class Genetic {
         this.UpdateFusionPopulation();
     }
     Arrays.sort(Population, Collections.reverseOrder());
+    System.out.println("La population de solution est: ");
     displayPopulation();
 }
     
